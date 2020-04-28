@@ -1,3 +1,4 @@
+import 'package:discoverworld/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -39,10 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
             fit: BoxFit.cover,
           ),
           Container(
-            height: 300,
-            width: 200,
-          ),
-          Container(
             height: 200.0,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
@@ -74,7 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: FlatButton(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0)),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Dashboard()));
+                      },
                       color: Colors.red[300],
                       child: Text(
                         "Sign in",
